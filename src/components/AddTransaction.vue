@@ -3,11 +3,11 @@
     <form id="form" @submit.prevent="onSubmit">
         <div class="form-control">
             <label for="text">Text</label>
-            <input type="text" id="text" placeholder="Enter Text..." v-model="Text" />
+            <input type="text" id="text" placeholder="Enter Text..." v-model="text" />
         </div>
         <div class="form-class">
             <label for="amount">Amount (Negative - Income, Positive - Income)</label>
-            <input type="text" id="amount" placeholder="Enter amount..." v-model="Amount" />
+            <input type="number" id="amount" placeholder="Enter amount..." v-model="amount" />
         </div>
         <button class="btn">Add Transaction</button>
     </form>
@@ -21,23 +21,23 @@ const amount = ref('');
 
 const toast = useToast();
 
-const emit = defineEmits('transactionSubmitted');
+const emit = defineEmits(['transactionSubmitted']);
 
 const onSubmit = () => {
-    if(!text.value || !amount.value) {
+    if (!text.value || !amount.value) {
         toast.error('Both field must be filled');
         return;
     }
-}
 
-const transactionData = {
-    text: text.value,
-    amount: parseFloat(amount.value),
+
+    const transactionData = {
+        text: text.value,
+        amount: parseFloat(amount.value),
+    };
+
+    emit('transactionSubmitted', transactionData);
+
+    text.value = '';
+    amount.value = '';
 };
-
-emit('transactionSubmitted', transactionData);
-
-text.value = '';
-amount.value = '';
-
 </script>
