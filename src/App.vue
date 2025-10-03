@@ -1,5 +1,5 @@
 <template>
-  <Header />
+  <HeaderD />
   <div class="container">
     <Balance :total="total" />
     <IncomeExpenses :income="+income" :expenses="+expenses" />
@@ -12,7 +12,7 @@
 </template>
 
 <script setup>
-import Header from './components/Header.vue';
+import HeaderD from './components/HeaderD.vue';
 import Balance from './components/Balance.vue';
 import IncomeExpenses from './components/IncomeExpenses.vue';
 import TransactionList from './components/TransactionList.vue';
