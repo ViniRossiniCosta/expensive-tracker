@@ -5,7 +5,7 @@
             :class="transaction.amount < 0 ? 'minus' : 'plus'">
             {{ transaction.text }} <span>{{ transaction.amount < 0 ? '-' : '+' }}${{ Math.abs(transaction.amount)
             }}</span>
-                    <button class="delete-btn" @click="deleteTransaction(transaction.id)">x</button>
+            <button class="delete-btn" @click="deleteTransaction(transaction.id)">x</button>
         </li>
     </ul>
 </template>

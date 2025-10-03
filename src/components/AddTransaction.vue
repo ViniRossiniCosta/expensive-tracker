@@ -5,8 +5,8 @@
             <label for="text">Text</label>
             <input type="text" id="text" placeholder="Enter Text..." v-model="text" />
         </div>
-        <div class="form-class">
-            <label for="amount">Amount (Negative - Income, Positive - Income)</label>
+        <div class="form-control">
+            <label for="amount">Amount (Negative - Expense, Positive - Income)</label>
             <input type="text" id="amount" placeholder="Enter amount..." v-model="amount" />
         </div>
         <button class="btn">Add Transaction</button>
